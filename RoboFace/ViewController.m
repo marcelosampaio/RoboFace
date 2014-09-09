@@ -27,7 +27,7 @@
 #pragma mark - Working Methods
 -(void)loadRandomImage {
     // Random set
-    int randomSet=0;       // =arc4random()%3;
+    int randomSet=arc4random()%3;
     randomSet++;
     
     // Generate a random value to the roboFace
