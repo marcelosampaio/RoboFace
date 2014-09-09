@@ -13,17 +13,43 @@
 @end
 
 @implementation ViewController
+@synthesize refreshOutlet;
+@synthesize imageView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self loadRandomImage];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Working Methods
+-(void)loadRandomImage {
+    // Random set
+    int randomSet=0;       // =arc4random()%3;
+    randomSet++;
+    
+    // Generate a random value to the roboFace
+    long randomNumber=arc4random() % 99999999;
+    if (randomNumber<0) {
+        randomNumber=randomNumber * -1;
+    }
+    
+    NSString *urlString=[NSString stringWithFormat:@"http://robohash.org/%ld.png?set=set%d",randomNumber,randomSet];
+    
+    // Load image from web
+    NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+    self.imageView.image=[UIImage imageWithData:data];
+    
+    NSLog(@"url = %@",urlString);
+
 }
+
+#pragma mark - UI Actions
+- (IBAction)refresh:(id)sender {
+    [self loadRandomImage];
+}
+
 
 @end

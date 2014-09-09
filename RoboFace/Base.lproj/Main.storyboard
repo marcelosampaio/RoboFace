@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rEQ-Ig-ZeX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller - RoboFace-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -15,11 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-84-ae6">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8u0-84-ae6" secondAttribute="trailing" id="B4B-vW-tXz"/>
+                            <constraint firstItem="8u0-84-ae6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BVW-Zf-75R"/>
+                            <constraint firstItem="8u0-84-ae6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Xyv-rt-bLx"/>
+                            <constraint firstAttribute="bottom" secondItem="8u0-84-ae6" secondAttribute="bottom" id="h6k-aD-xXt"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="RoboFace" id="IRJ-B5-E3A">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="EDV-h0-nBq">
+                            <connections>
+                                <action selector="refresh:" destination="vXZ-lx-hvc" id="j13-uL-mWS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="8u0-84-ae6" id="0j3-AF-3Jc"/>
+                        <outlet property="refreshOutlet" destination="EDV-h0-nBq" id="kbG-21-D6p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="739" y="47"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I4A-gf-0K1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rEQ-Ig-ZeX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vTs-WA-dVH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="a3E-zf-RdA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXK-DE-qdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253" y="47"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

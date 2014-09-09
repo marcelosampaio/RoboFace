@@ -112,11 +112,10 @@
 		9C36F97319BE558300F72894 /* RoboFace */ = {
 			isa = PBXGroup;
 			children = (
-				9C36F97C19BE558400F72894 /* AppDelegate.h */,
-				9C36F97D19BE558400F72894 /* AppDelegate.m */,
-				9C36F97F19BE558400F72894 /* Main.storyboard */,
-				9C36F98219BE558400F72894 /* ViewController.h */,
-				9C36F98319BE558400F72894 /* ViewController.m */,
+				9C36F9A519BE55E700F72894 /* Model */,
+				9C36F9A419BE55D800F72894 /* Controller */,
+				9C36F9A319BE55C800F72894 /* UI */,
+				9C36F9A219BE55B900F72894 /* Root */,
 				9C36F98519BE558400F72894 /* Images.xcassets */,
 				9C36F97419BE558300F72894 /* Supporting Files */,
 			);
@@ -150,6 +149,39 @@
 				9C36F99519BE558400F72894 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C36F9A219BE55B900F72894 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9C36F97C19BE558400F72894 /* AppDelegate.h */,
+				9C36F97D19BE558400F72894 /* AppDelegate.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		9C36F9A319BE55C800F72894 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9C36F97F19BE558400F72894 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9C36F9A419BE55D800F72894 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C36F98219BE558400F72894 /* ViewController.h */,
+				9C36F98319BE558400F72894 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9C36F9A519BE55E700F72894 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
